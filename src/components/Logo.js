@@ -18,5 +18,4 @@ const Container = styled.figure`
     flex-direction: column;
     margin-top: 10vh;
     margin-bottom: 3vh;
-    background-color: aliceblue;
 `

@@ -1,9 +1,15 @@
+import { useContext } from "react"
 import styled from "styled-components"
+import MyContext from "../context/MyContext"
+
+
 
 export default function GenericButton({text}){
+    const {inputState} = useContext(MyContext)
+    
     return(
-        <Container>
-            <button>{text}</button>
+        <Container inputState={inputState}>
+            <button disabled={inputState}>{text}</button>
         </Container>
     )
 }
@@ -20,5 +26,10 @@ const Container = styled.div`
         color: #FFFFFF;
         border-radius: 5px;
         border: none;
+        cursor: pointer;
+        opacity: ${props => props.inputState === true ? 0.7 : 1};
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `

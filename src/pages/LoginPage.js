@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import FooterMessageGeneric from "../components/FooterMessageGeneric"
 import GenericButton from "../components/GenericButton"
@@ -11,12 +12,18 @@ export default function LoginPage() {
         <Container>
             <Logo />
 
-            <GenericInput text="email" />
-            <GenericInput text="senha" />
+            <form>
+                <GenericInput text="email" type="email" />
+                <GenericInput text="senha" type="password" />
 
-            <GenericButton text="Entrar" />
+                <GenericButton text="Entrar" />
 
-            <FooterMessageGeneric text="Não tem uma conta? Cadastre-se!" />
+            </form>
+
+            <Link to="/cadastro">
+                <FooterMessageGeneric text="Não tem uma conta? Cadastre-se!" />
+            </Link>
+
 
 
         </Container>
