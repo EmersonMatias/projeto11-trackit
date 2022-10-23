@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export default function signUp(e, setInputState, setDataSignUp, dataSignUp, navigate) {
+export default function signUp({e, setInputState, setDataSignUp, dataSignUp, navigate}) {
     e.preventDefault()
 
     let checkPassword = dataSignUp.password.length

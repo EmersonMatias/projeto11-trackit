@@ -7,7 +7,7 @@ export default function GenericInput({text, type, onchange, value}){
     const {inputState} = useContext(MyContext)
    
     return(
-       <Container>
+       <Container inputState={inputState}>
             <input placeholder={text} type={type} onChange={onchange} required disabled={inputState} value={value}/>
        </Container>
     )
@@ -20,8 +20,9 @@ const Container = styled.div`
         height: 45px;
         font-size: 20px;
         border-radius: 5px;
-        border: solid 1px #D4D4D4;
+        border: solid 2px #D4D4D4;
         margin-bottom: 1vh;
+        background-color: ${props => props.inputState === false ? "" : "#F2F2F2;"};
         
         
         ::placeholder{
