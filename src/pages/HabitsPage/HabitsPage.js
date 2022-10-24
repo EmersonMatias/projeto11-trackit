@@ -77,7 +77,7 @@ export default function HabitsPage() {
 }
 
 const Container = styled.div`
-    width: 100vw;
+  
     height: 100vh;
     background-color: #E5E5E5;
     display: flex;

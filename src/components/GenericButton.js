@@ -18,7 +18,7 @@ const Container = styled.div`
     
     button{
         @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Righteous&display=swap');
-         font-family: 'Lexend Deca', sans-serif;
+        font-family: 'Lexend Deca', sans-serif;
         width: 303px;
         height: 45px;
         font-size: 21px;
@@ -26,11 +26,11 @@ const Container = styled.div`
         color: #FFFFFF;
         border-radius: 5px;
         border: none;
-        cursor: pointer;
         opacity: ${props => props.inputState === true ? 0.7 : 1};
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 2vh;
+        
     }
 `
