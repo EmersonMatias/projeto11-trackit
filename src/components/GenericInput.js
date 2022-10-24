@@ -3,12 +3,12 @@ import styled from "styled-components"
 import MyContext from "../context/MyContext"
 
 
-export default function GenericInput({text, type, onchange, value}){
+export default function GenericInput({text, type, onchange, value, dataIdentifier}){
     const {inputState} = useContext(MyContext)
    
     return(
        <Container inputState={inputState}>
-            <input placeholder={text} type={type} onChange={onchange} required disabled={inputState} value={value}/>
+            <input placeholder={text} type={type} onChange={onchange} required disabled={inputState} value={value} data-identifier={dataIdentifier}/>
        </Container>
     )
 }

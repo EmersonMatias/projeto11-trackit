@@ -10,7 +10,7 @@ export default function Header() {
         <Container>
             <img className="logo" src={logoheader} alt="Header Logo"/>
 
-            <img className="imagemperfil" src={generalUserData.image} alt="Imagem de Perfil"></img>
+            <img className="imagemperfil" src={generalUserData.image} alt="Imagem de Perfil" data-identifier="avatar"></img>
         </Container>
     )
 }

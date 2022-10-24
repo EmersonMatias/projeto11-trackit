@@ -9,20 +9,35 @@ import createNewHabit from "./createNewHabit"
 import textButtonSave from "./textButtonSave"
 import axios from "axios"
 import MyHabit from "./MyHabit"
+import { useNavigate } from "react-router-dom"
+
+
+
 
 
 export default function HabitsPage() {
     const daysWeek = [{ day: "D", id: 0 }, { day: "S", id: 1 }, { day: "T", id: 2 }, { day: "Q", id: 3 }, { day: "Q", id: 4 }, { day: "S", id: 5 }, { day: "S", id: 6 }]
     const [newHabitData, setNewHabitData] = useState({ name: "", days: [] })
     const [stateNewHabit, setStateNewHabit] = useState(false)
-    const { inputState, setInputState, config, myHabitsList, setMyHabitsList } = useContext(MyContext)
+    const { inputState, setInputState, config, myHabitsList, setMyHabitsList, newRequisition, isCheck, todayHabitsData, loginSucess} = useContext(MyContext)
     const habitsListIsEmpty = myHabitsList.length
+    const navigate = useNavigate()
+
+    todayHabitsData.map((habit) => {
+        if (habit.done === true) {
+            isCheck.push(habit)
+        }
+    })
 
     useEffect(() => {
         axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits', config)
             .then((response) => (setMyHabitsList(response.data)))
+        
+        if(!loginSucess){
+            navigate('/')
+        }
 
-    }, [stateNewHabit])
+    }, [stateNewHabit, newRequisition])
 
     return (
         <Container>
@@ -31,28 +46,28 @@ export default function HabitsPage() {
             <HabitsContainer stateNewHabit={stateNewHabit} inputState={inputState} habitsListIsEmpty={habitsListIsEmpty}>
                 <div className="myHabitsHeaderContainer">
                     <div>Meus Hábitos</div>
-                    <button onClick={() => setStateNewHabit(!stateNewHabit)}>+</button>
+                    <button onClick={() => setStateNewHabit(!stateNewHabit)} data-identifier="create-habit-btn">+</button>
                 </div>
 
                 <div className="newHabitsContainer">
 
-                    <GenericInput text="nome do hábito" type="text" value={newHabitData.name} onchange={(e) => (setNewHabitData({ ...newHabitData, name: e.target.value }))} />
+                    <GenericInput text="nome do hábito" type="text" value={newHabitData.name} onchange={(e) => (setNewHabitData({ ...newHabitData, name: e.target.value }))} dataIdentifier={"input-habit-name"} />
 
                     {daysWeek.map((obj, index) => (<DayWeekButton key={index} day={obj.day} id={obj.id} newHabitData={newHabitData} setNewHabitData={setNewHabitData} />))}
 
                     <div className="buttonsNewHabits">
-                        <button className="cancelButton" onClick={() => (setStateNewHabit(false))} disabled={inputState}>Cancelar</button>
-                        <button className="saveButton" onClick={() => createNewHabit(setInputState, setNewHabitData, setStateNewHabit, config, newHabitData, inputState)} disabled={inputState}>{textButtonSave(inputState)}</button>
+                        <button className="cancelButton" data-identifier="cancel-habit-create-btn" onClick={() => (setStateNewHabit(false))} disabled={inputState}>Cancelar</button>
+                        <button className="saveButton" data-identifier="save-habit-create-btn" onClick={() => createNewHabit(setInputState, setNewHabitData, setStateNewHabit, config, newHabitData, inputState)} disabled={inputState}>{textButtonSave(inputState)}</button>
                     </div>
 
                 </div>
 
-                <div className="messageNoneHabitContainer">
+                <div className="messageNoneHabitContainer" data-identifier="no-habit-message">
                     Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
                 </div>
 
                 <div className="habitsList">
-                  {myHabitsList.map((habit) => (<MyHabit key={habit.id} daysWeek={daysWeek} name={habit.name} id={habit.id}/>))}
+                    {myHabitsList.map((habit) => (<MyHabit key={habit.id} daysWeek={daysWeek} days={habit.days} name={habit.name} id={habit.id} />))}
                 </div>
             </HabitsContainer>
 
@@ -87,7 +102,6 @@ const HabitsContainer = styled.section`
         justify-content: space-between;
         width: 100vw;
         font-size: 25px;
-        background-color: yellow;
         padding: 0 20px;
 
         div{
@@ -145,8 +159,6 @@ const HabitsContainer = styled.section`
             justify-content: center;
         }
         }
-
-        
     }
 
     .messageNoneHabitContainer{
@@ -159,7 +171,6 @@ const HabitsContainer = styled.section`
     }
 
     .habitsList{
-        background-color: red;
         width: 100vw;
         margin-top: 3vh;
         height: 80vh;

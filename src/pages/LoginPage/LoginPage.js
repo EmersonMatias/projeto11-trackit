@@ -13,9 +13,11 @@ import buttonTextLogin from "./buttonTextLogin"
 
 
 
+
+
 export default function LoginPage() {
     const [userLoginData, setUserLoginData] = useState({ email: "", password: "" })
-    const { URL_REQUISITON_DAFULT, setGeneralUserData, setInputState, inputState} = useContext(MyContext)
+    const { URL_REQUISITON_DAFULT, setGeneralUserData, setInputState, inputState,setLoginSucess} = useContext(MyContext)
     const navigate = useNavigate()
 
     function userLogin(e) {
@@ -26,8 +28,8 @@ export default function LoginPage() {
         function sucessLogin(response){
             setGeneralUserData(response.data)
             setInputState(false)
+            setLoginSucess(true)
             navigate('/hoje')
-
         }
 
         function errorLogin(error){
@@ -46,15 +48,15 @@ export default function LoginPage() {
             <Logo />
 
             <form onSubmit={userLogin}>
-                <GenericInput text="email" type="email" onchange={(e) => (setUserLoginData({ ...userLoginData, email: e.target.value }))} />
-                <GenericInput text="senha" type="password" onchange={(e) => (setUserLoginData({...userLoginData, password: e.target.value}))}/>
+                <GenericInput text="email" type="email" onchange={(e) => (setUserLoginData({ ...userLoginData, email: e.target.value }))} dataIdentifier={"input-email"} />
+                <GenericInput text="senha" type="password" onchange={(e) => (setUserLoginData({...userLoginData, password: e.target.value}))} dataIdentifier={"input-password"}/>
 
-                <GenericButton text={buttonTextLogin(inputState)}/>
+                <GenericButton text={buttonTextLogin(inputState)} dataIdentifier={"login-btn"}/>
 
             </form>
 
             <Link to="/cadastro">
-                <FooterMessageGeneric text="Não tem uma conta? Cadastre-se!" />
+                <FooterMessageGeneric text="Não tem uma conta? Cadastre-se!" dataIdentifier={"sign-up-action"}/>
             </Link>
 
 

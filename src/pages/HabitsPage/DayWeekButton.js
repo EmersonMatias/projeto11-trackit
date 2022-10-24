@@ -22,7 +22,7 @@ export default function DayWeekButton({day,id,newHabitData, setNewHabitData}) {
 
     return (
         <Container daySelected={daySelected}>
-            <button onClick={selectDay} disabled={inputState}>{day}</button>
+            <button onClick={selectDay} disabled={inputState} data-identifier="week-day-btn">{day}</button>
         </Container>
     )
 }

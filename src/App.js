@@ -11,19 +11,21 @@ import { useState } from "react"
 export default function App() {
     const [inputState, setInputState] = useState(false)
     const [generalUserData, setGeneralUserData] = useState({})
+    const [loginSucess, setLoginSucess] = useState(false)
     const [myHabitsList, setMyHabitsList] = useState([])
+    const [todayHabitsData, setTodayHabitsData] = useState([])
+    const [newRequisition , setNewRequisition] = useState(true)
+    const isCheck = []
     const URL_REQUISITON_DAFULT = "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth"
     const config = { headers: { Authorization: `Bearer ${generalUserData.token}` } }
-    console.log(myHabitsList)
-
-
+   
 
     return (
         <>
             <BrowserRouter>
                 <GlobalStyle />
 
-                <MyContext.Provider value={{ inputState, setInputState, URL_REQUISITON_DAFULT, generalUserData, setGeneralUserData, config, myHabitsList, setMyHabitsList }}>
+                <MyContext.Provider value={{ inputState, setInputState, URL_REQUISITON_DAFULT, generalUserData, setGeneralUserData, config, myHabitsList, setMyHabitsList, todayHabitsData, setTodayHabitsData, newRequisition, setNewRequisition, isCheck, loginSucess, setLoginSucess}}>
                     <Routes>
                         <Route path='/' element={<LoginPage />} />
 

@@ -4,12 +4,12 @@ import MyContext from "../context/MyContext"
 
 
 
-export default function GenericButton({text}){
+export default function GenericButton({text, dataIdentifier}){
     const {inputState} = useContext(MyContext)
     
     return(
         <Container inputState={inputState}>
-            <button disabled={inputState}>{text}</button>
+            <button disabled={inputState} data-identifier={dataIdentifier}>{text}</button>
         </Container>
     )
 }

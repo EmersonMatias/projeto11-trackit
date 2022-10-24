@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export default function FooterMessageGeneric({text}){
+export default function FooterMessageGeneric({text, dataIdentifier}){
     return(
         <Container>
-            <p>{text}</p>
+            <p data-identifier={dataIdentifier}>{text}</p>
         </Container>
     )
 }

@@ -25,26 +25,30 @@ export default function SignupPage() {
                     type="email"
                     onchange={(e) => (setDataSignUp({ ...dataSignUp, email: e.target.value }))}
                     value={dataSignUp.email}
+                    dataIdentifier={"input-email"}
                 />
                 <GenericInput
                     text="senha"
                     type="password"
                     onchange={(e) => (setDataSignUp({ ...dataSignUp, password: e.target.value }))}
                     value={dataSignUp.password}
+                    dataIdentifier={"input-password"}
                 />
                 <GenericInput
                     text="nome"
                     type="text"
                     onchange={(e) => (setDataSignUp({ ...dataSignUp, name: e.target.value }))}
                     value={dataSignUp.name}
+                    dataIdentifier={"input-name"}
                 />
                 <GenericInput
                     text="foto"
                     type="url"
                     onchange={(e) => (setDataSignUp({ ...dataSignUp, image: e.target.value }))}
                     value={dataSignUp.image}
+                    dataIdentifier={"input-photo"}
                 />
-                <GenericButton text={buttonText(inputState)} />
+                <GenericButton text={buttonText(inputState)} dataIdentifier={"back-to-login-action"}/>
             </form>
 
             <Link to="/">
