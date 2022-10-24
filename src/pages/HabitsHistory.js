@@ -50,6 +50,7 @@ const Container = styled.div`
     background-color: #E5E5E5;
     @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Righteous&display=swap');
     font-family: 'Lexend Deca', sans-serif;
+    overflow: hidden;
 
     .historyContainer{
         margin-top: 2vh;

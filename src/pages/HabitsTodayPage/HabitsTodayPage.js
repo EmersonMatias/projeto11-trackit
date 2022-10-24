@@ -83,6 +83,7 @@ const Container = styled.div`
     background-color: #E5E5E5;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
 `
 
