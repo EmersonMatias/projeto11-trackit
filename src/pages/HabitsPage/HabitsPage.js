@@ -91,7 +91,7 @@ const HabitsContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 80vh;
     @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Righteous&display=swap');
     font-family: 'Lexend Deca', sans-serif;
@@ -100,7 +100,7 @@ const HabitsContainer = styled.section`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100vw;
+        width: 100%;
         font-size: 25px;
         padding: 0 20px;
 
@@ -121,7 +121,7 @@ const HabitsContainer = styled.section`
     .newHabitsContainer{
         display: ${props => props.stateNewHabit === false ? "none" : ""};
         background-color: #FFFFFF;
-        width: 90vw;
+        width: 90%;
         height: auto;
         border-radius: 5px;
         margin-top: 2vh;
@@ -171,7 +171,7 @@ const HabitsContainer = styled.section`
     }
 
     .habitsList{
-        width: 100vw;
+        width: 100%;
         margin-top: 3vh;
         height: 80vh;
         overflow: scroll;

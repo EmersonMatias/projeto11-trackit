@@ -34,7 +34,7 @@ export default function MyHabit({ daysWeek, name, id, days }) {
 }
 
 const Container = styled.div`
-            width: 95%;
+            width: 90%;
             background-color: #FFFFFF;
             padding: 15px;
             border-radius: 5px;
