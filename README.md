@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Projeto 11 - TrackIt (Driven)
+O projeto TrackIt foi desenvolvido com o propósito de oferecer uma aplicação interativa e útil para auxiliar os usuários no acompanhamento e gerenciamento de seus hábitos diários. A ideia principal é criar uma plataforma intuitiva e responsiva, possibilitando aos usuários o registro e monitoramento de suas rotinas de maneira simplificada.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Funcionalidades 
+* Login: Permite que os usuários façam login na aplicação.
+* Cadastro: Oferece um formulário para que novos usuários se cadastrem na plataforma.
+* Listagem de Hábitos: Exibe os hábitos cadastrados pelo usuário.
+* Adição de Hábitos: Permite que o usuário adicione novos hábitos à sua lista.
+* Remoção de Hábitos: Possibilita a exclusão de hábitos existentes na lista.
+* Hábitos do Dia: Mostra os hábitos que devem ser realizados no dia atual.
+* Marcação de Hábitos Concluídos: Permite que o usuário marque seus hábitos como concluídos para o dia.
+* Indicadores de Progresso: Exibe informações visuais sobre o progresso do usuário na conclusão dos hábitos diários.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### As principais tecnologias e conceitos aplicados nesse projeto incluem:
+* HTML
+* CSS
+* Javascript
+* React
+* Styled-Components
+* React Router
+* Axios
+* Persistência de Dados Locais
+* ContextAPI
